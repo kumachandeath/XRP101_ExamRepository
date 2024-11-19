@@ -7,7 +7,7 @@ public class GameManager : SingletonBehaviour<GameManager>
 {
     public float Score { get; set; }
 
-    public float temp;
+    public float temp = 0;
 
     private void Awake()
     {
@@ -29,10 +29,6 @@ public class GameManager : SingletonBehaviour<GameManager>
 
     public void LoadScene(int buildIndex)
     {
-        if(temp != 0)
-        {
-            Score = temp;
-        }
         SceneManager.LoadScene(buildIndex);
     }
 }
