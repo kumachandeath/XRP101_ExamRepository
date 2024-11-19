@@ -16,6 +16,14 @@ public class PopupController : MonoBehaviour
         Init();
     }
 
+    private void OnEnable()
+    {
+        if(GameManager.Intance.temp != 0)
+        {
+            GameManager.Intance.Score = GameManager.Intance.temp;
+        }
+    }
+
     private void Init()
     {
         _wait = new WaitForSeconds(_deactiveTime);
@@ -37,6 +45,7 @@ public class PopupController : MonoBehaviour
 
     private void Deactivate()
     {
+        GameManager.Intance.Resume();
         _popup.gameObject.SetActive(false);
     }
 
