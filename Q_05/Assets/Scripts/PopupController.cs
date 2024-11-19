@@ -37,6 +37,7 @@ public class PopupController : MonoBehaviour
 
     private void Deactivate()
     {
+        GameManager.Intance.Resume();
         _popup.gameObject.SetActive(false);
     }
 
